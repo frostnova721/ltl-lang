@@ -1,0 +1,17 @@
+class Person {
+    introduce(name) {
+        print "Hello! Im " + name;
+    }
+}
+
+// Inheritance!
+class Kid < Person {
+    saySomething() {
+        print "Hewwo evewy one!";
+    }
+}
+
+Person().introduce("FrostNova");
+var kid = Kid();
+kid.saySomething();
+kid.introduce("a Kid");

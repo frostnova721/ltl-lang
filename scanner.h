@@ -1,0 +1,39 @@
+#ifndef cltl_scanner_h
+#define cltl_scanner_h
+
+typedef enum {
+    TOKEN_PARAN_LEFT, TOKEN_PARAN_RIGHT,
+    TOKEN_BRACE_LEFT, TOKEN_BRACE_RIGHT,
+    TOKEN_COMMA, TOKEN_DOT, TOKEN_PLUS,
+    TOKEN_MINUS, TOKEN_SLASH, TOKEN_COLON,
+    TOKEN_STAR, TOKEN_SEMICOLON, TOKEN_QUESTION,
+
+    TOKEN_LESS, TOKEN_LESS_EQUAL,
+    TOKEN_GREATER, TOKEN_GREATER_EQUAL,
+    TOKEN_EQUAL, TOKEN_EQUAL_EQUAL,
+    TOKEN_BANG, TOKEN_BANG_EQUAL,
+
+    TOKEN_IDENTIFIER, TOKEN_STRING, TOKEN_NUM,
+
+    TOKEN_AND, TOKEN_CLASS, TOKEN_FUNCT,
+    TOKEN_IF, TOKEN_ELSE, TOKEN_NULL,
+    TOKEN_FOR, TOKEN_WHILE, TOKEN_VAR,
+    TOKEN_TRUE, TOKEN_FALSE, TOKEN_PRINT,
+    TOKEN_RETURN, TOKEN_SUPER, TOKEN_THIS,
+    TOKEN_OR,
+
+    TOKEN_ERROR, TOKEN_EOF,
+} TokenType;
+
+typedef struct {
+    TokenType type;
+    const char* start;
+    int length;
+    int line;
+} Token;
+
+
+void initScanner(const char* source);
+Token scanToken();
+
+#endif
